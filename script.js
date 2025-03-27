@@ -13,9 +13,29 @@ const form = document.querySelector('form');
 form.addEventListener('submit', function(e) {
   e.preventDefault();
   const formData = new FormData(form);
-  // Here you would typically send the form data to a server
-  alert('Message sent successfully!');
-  form.reset();
+  const data = {
+    name: formData.get('name'),
+    email: formData.get('email'),
+    message: formData.get('message'),
+    to: 'mushfiqrhmn1@gmail.com'
+  };
+
+  // You would need to set up a server endpoint to handle this
+  fetch('/submit-form', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data)
+  })
+  .then(response => response.json())
+  .then(data => {
+    alert('Message sent successfully!');
+    form.reset();
+  })
+  .catch(error => {
+    alert('Error sending message. Please try again.');
+  });
 });
 
 // Scroll-based navigation highlighting

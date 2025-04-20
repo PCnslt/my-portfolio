@@ -1,96 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Shawn R. | Portfolio</title>
+      <link rel="stylesheet" href="style.css">
+      <!-- External CSS -->
+   </head>
+   <body>
+      <!-- Header and Navigation -->
+      <header>
+         <div class="banner">
+            <h1>Shawn R.</h1>
+         </div>
+         <nav>
+            <ul>
+               <li><a href="#home">Home</a></li>
+               <li><a href="#about">About</a></li>
+               <li><a href="#portfolio">Portfolio</a></li>
+               <li><a href="#contact">Contact</a></li>
+            </ul>
+         </nav>
+      </header>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shawn R. | Portfolio</title>
-  <link rel="stylesheet" href="style.css"> <!-- External CSS -->
-</head>
+      <!-- Main Content -->
+      <main>
+         <section id="home" class="hero">
+            <div class="container">
+               <h2>Welcome to My Portfolio</h2>
+               <p>Creative solutions, modern designs, and innovative development.</p>
+               <a href="#portfolio" class="btn">View My Work</a>
+            </div>
+         </section>
 
-<body>
+         <section id="about" class="about">
+            <div class="container">
+               <h2>About Me</h2>
+               <p>
+                  With over 14 years in quality engineering and test automation, I specialize in building scalable frameworks that bridge modern development with seamless testing. From architecting CI/CD pipelines to automating both web and mobile UI, I’ve led QA efforts that span cloud-native ecosystems, machine learning platforms, and enterprise-level applications.
+                  <br><br>
+                  My toolbox includes TypeScript, Java, and Python—delivered through frameworks like Cypress, Selenium, Appium, and BDD-driven architectures. I've written data-driven test scripts, managed test execution in CI/CD pipelines, and automated validations for REST APIs, UIs, and backend workflows.
+                  <br><br>
+                  I’ve engineered solutions using AWS services like Lambda, S3, DynamoDB, and CloudFormation, and automated test data pipelines with Python’s boto3. I track KPIs using dashboards and generate actionable QA reports to close feedback loops across fast-paced Agile teams.
+                  <br><br>
+                  Whether it’s defining QA strategy, mentoring automation engineers, or implementing DevOps-first practices, I deliver quality at scale—through code, process, and collaboration.
+               </p>
+            </div>
+         </section>
 
-  <!-- Header and Navigation -->
-  <header>
-    <div class="banner">
-      <h1>Shawn R.</h1>
-    </div>
-    <nav>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+         <section id="portfolio" class="portfolio">
+            <div class="container">
+               <h2>Portfolio</h2>
+               <div class="portfolio-items">
+                  <!-- Portfolio Items Here -->
+                  <p>LinkedIn Profile:</p>
+                  <a href="https://www.linkedin.com/in/m-rahman-sdet/">https://www.linkedin.com/in/m-rahman-sdet/</a><br>
+                  <p>Github Repo:</p>
+                  <a href="https://github.com/PCnslt">https://github.com/PCnslt</a><br>
+                  <p>E-Commerce website:</p>
+                  <a href="https://promo-services.net/">https://promo-services.net/</a>
+                  <h6>Some project links may be temporarily unavailable due to hosting cost constraints. Maintaining live demos incurs ongoing expenses, and I appreciate your understanding.</h6>
+               </div>
+            </div>
+         </section>
 
-  <!-- Main Content -->
-  <main>
-    <section id="home" class="hero">
-      <div class="container">
-        <h2>Welcome to My Portfolio</h2>
-        <p>Creative solutions, modern designs, and innovative development.</p>
-        <a href="#portfolio" class="btn">View My Work</a>
-      </div>
-    </section>
+         <section id="contact" class="contact">
+            <div class="container">
+               <h2>Contact Me</h2>
+               <form>
+                  <input type="text" name="name" placeholder="Your Name" required>
+                  <input type="email" name="email" placeholder="Your Email" required>
+                  <textarea name="message" placeholder="Your Message" required></textarea>
+                  <button type="submit" class="btn">Send Message</button>
+               </form>
+            </div>
+         </section>
+      </main>
 
-    <section id="about" class="about">
-      <div class="container">
-        <h2>About Me</h2>
-        <p>I have more than 14 years in test automation and quality assurance, I’ve built and
-maintained frameworks that balance technical precision with a focus on real-world
-applications. At Delta Air Lines, I led the creation of TypeScript-based Cypress tests and
-coordinated QA teams spread across different regions, always working to improve our
-test pipelines and team communication. My work at the USPTO allowed me to refine
-Java-based automation and streamline testing across multiple platforms, while my time
-as an instructor at PeopleNTech let me mentor future tech professionals. I got my start
-at the Virginia Department of Health, where hands-on experience with HP Quick Test Pro
-and Oracle-based testing set the stage for a rewarding career that blends practical
-problem-solving with continuous learning and collaboration.</p>
-      </div>
-    </section>
+      <!-- Footer -->
+      <footer>
+         <div class="container">
+            <p>&copy; 2024 Shawn R. All Rights Reserved.</p>
+         </div>
+      </footer>
 
-    <section id="portfolio" class="portfolio">
-      <div class="container">
-        <h2>Portfolio</h2>
-        <div class="portfolio-items">
-          <!-- Portfolio Items Here -->
-
-              <p>Github Repo:</p>
-<!--               <p>https://github.com/PCnslt</p></br> -->
-              <a href="https://github.com/PCnslt">https://github.com/PCnslt</a></br>
-              <p>E-Commerce website:</p>
-<!--               <p>https://promo-services.net/</p> -->
-              <a href="https://promo-services.net/">https://promo-services.net/</a>
-
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="contact">
-      <div class="container">
-        <h2>Contact Me</h2>
-        <form>
-          <input type="text" name="name" placeholder="Your Name" required>
-          <input type="email" name="email" placeholder="Your Email" required>
-          <textarea name="message" placeholder="Your Message" required></textarea>
-          <button type="submit" class="btn">Send Message</button>
-        </form>
-      </div>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <p>&copy; 2024 Shawn R. All Rights Reserved.</p>
-    </div>
-  </footer>
-  
-  <button class="back-to-top" aria-label="Back to top">↑</button>
-  
-  <script src="script.js"></script>
-</body>
-
+      <button class="back-to-top" aria-label="Back to top">↑</button>
+      <script src="script.js"></script>
+   </body>
 </html>

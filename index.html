@@ -1,95 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Shawn R. | Portfolio</title>
-      <link rel="stylesheet" href="style.css">
-      <!-- External CSS -->
-   </head>
-   <body>
-      <!-- Header and Navigation -->
-      <header>
-         <div class="banner">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shawn R. | Modern Portfolio</title>
+
+    <!-- Google Fonts (Example: Poppins) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- AOS (Animate On Scroll) Library CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Your Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header and Navigation -->
+    <header>
+        <div class="banner" data-aos="fade-down">
             <h1>Shawn R.</h1>
-         </div>
-         <nav>
+        </div>
+        <nav data-aos="fade-down" data-aos-delay="100">
             <ul>
-               <li><a href="#home">Home</a></li>
-               <li><a href="#about">About</a></li>
-               <li><a href="#portfolio">Portfolio</a></li>
-               <li><a href="#contact">Contact</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
-         </nav>
-      </header>
+        </nav>
+    </header>
 
-      <!-- Main Content -->
-      <main>
-         <section id="home" class="hero">
-            <div class="container">
-               <h2>Welcome to My Portfolio</h2>
-               <p>Creative solutions, modern designs, and innovative development.</p>
-               <a href="#portfolio" class="btn">View My Work</a>
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section with Video Background -->
+        <section id="home" class="hero">
+             <!-- Video Background Container -->
+            <div class="video-background-container">
+                <video playsinline autoplay muted loop>
+                    <source src="./video1.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="video-overlay"></div> <!-- Gradient overlay -->
             </div>
-         </section>
+            <!-- End Video Background Container -->
 
-         <section id="about" class="about">
-            <div class="container">
-               <h2>About Me</h2>
-               <p>
-                  With over 14 years in quality engineering and test automation, I specialize in building scalable frameworks that bridge modern development with seamless testing. From architecting CI/CD pipelines to automating both web and mobile UI, I’ve led QA efforts that span cloud-native ecosystems, machine learning platforms, and enterprise-level applications.
-                  <br><br>
-                  My toolbox includes TypeScript, Java, and Python—delivered through frameworks like Cypress, Selenium, Appium, and BDD-driven architectures. I've written data-driven test scripts, managed test execution in CI/CD pipelines, and automated validations for REST APIs, UIs, and backend workflows.
-                  <br><br>
-                  I’ve engineered solutions using AWS services like Lambda, S3, DynamoDB, and CloudFormation, and automated test data pipelines with Python’s boto3. I track KPIs using dashboards and generate actionable QA reports to close feedback loops across fast-paced Agile teams.
-                  <br><br>
-                  Whether it’s defining QA strategy, mentoring automation engineers, or implementing DevOps-first practices, I deliver quality at scale—through code, process, and collaboration.
-               </p>
+            <!-- Hero Content -->
+            <div class="container" data-aos="zoom-in" data-aos-duration="1000">
+                <h2>Welcome to My Portfolio</h2>
+                <p>Creative solutions, modern designs, and innovative development.</p>
+                <a href="#portfolio" class="btn" data-aos="zoom-in" data-aos-delay="300">View My Work</a>
             </div>
-         </section>
+            <!-- End Hero Content -->
+        </section>
+        <!-- End Hero Section -->
 
-         <section id="portfolio" class="portfolio">
+        <!-- About Section -->
+        <section id="about" class="about">
             <div class="container">
-               <h2>Portfolio</h2>
-               <div class="portfolio-items">
-                  <!-- Portfolio Items Here -->
-                  <p>LinkedIn Profile:</p>
-                  <a href="https://www.linkedin.com/in/m-rahman-sdet/">https://www.linkedin.com/in/m-rahman-sdet/</a><br/>
-                  <p>Github Repo:</p>
-                  <a href="https://github.com/PCnslt">https://github.com/PCnslt</a><br/>
-                  <p>E-Commerce website:</p>
-                  <a href="https://promo-services.net/">https://promo-services.net/</a><br/>
-                  <h6>* Some project links may be temporarily unavailable due to hosting cost constraints. Maintaining live demos incurs ongoing expenses, and I appreciate your understanding.</h6>
-               </div>
+                <h2 data-aos="fade-right">About Me</h2>
+                <p data-aos="fade-up">
+                    With over 14 years in quality engineering and test automation, I specialize in building scalable frameworks that bridge modern development with seamless testing. From architecting CI/CD pipelines to automating both web and mobile UI, I’ve led QA efforts that span cloud-native ecosystems, machine learning platforms, and enterprise-level applications.
+                    <br><br>
+                    My toolbox includes TypeScript, Java, and Python—delivered through frameworks like Cypress, Selenium, Appium, and BDD-driven architectures. I've written data-driven test scripts, managed test execution in CI/CD pipelines, and automated validations for REST APIs, UIs, and backend workflows.
+                    <br><br>
+                    I’ve engineered solutions using AWS services like Lambda, S3, DynamoDB, and CloudFormation, and automated test data pipelines with Python’s boto3. I track KPIs using dashboards and generate actionable QA reports to close feedback loops across fast-paced Agile teams.
+                    <br><br>
+                    Whether it’s defining QA strategy, mentoring automation engineers, or implementing DevOps-first practices, I deliver quality at scale—through code, process, and collaboration.
+                </p>
             </div>
-         </section>
+        </section>
 
-         <!-- **** MODIFIED CONTACT SECTION **** -->
-         <section id="contact" class="contact">
+        <!-- Portfolio Section -->
+        <section id="portfolio" class="portfolio">
             <div class="container">
-               <h2>Contact Me</h2>
-               <p>Feel free to reach out directly:</p>
-               <p>
-                  <strong>Phone:</strong> <a href="tel:+1-571-762-1680">+1-571-762-1680</a>
-               </p>
-               <p>
-                  <strong>Email:</strong> <a href="mailto:mushfiqrhmn1@gmail.com">mushfiqrhmn1@gmail.com</a>
-               </p>
-               <!-- The original form is removed -->
+                <h2 data-aos="fade-left">Portfolio</h2>
+                <div class="portfolio-items">
+                    <!-- Added divs for individual item styling/animation -->
+                    <div class="portfolio-item" data-aos="flip-left" data-aos-delay="0">
+                        <p>LinkedIn Profile:</p>
+                        <a href="https://www.linkedin.com/in/m-rahman-sdet/" target="_blank" rel="noopener noreferrer">View Profile</a>
+                    </div>
+                    <div class="portfolio-item" data-aos="flip-left" data-aos-delay="100">
+                         <p>Github Repo:</p>
+                        <a href="https://github.com/PCnslt" target="_blank" rel="noopener noreferrer">View Repo</a>
+                    </div>
+                     <div class="portfolio-item" data-aos="flip-left" data-aos-delay="200">
+                        <p>E-Commerce website:</p>
+                        <a href="https://promo-services.net/" target="_blank" rel="noopener noreferrer">Visit Site</a>
+                    </div>
+                </div>
+                 <h6 data-aos="fade-up" data-aos-delay="300">* Some project links may be temporarily unavailable due to hosting cost constraints. Maintaining live demos incurs ongoing expenses, and I appreciate your understanding.</h6>
             </div>
-         </section>
-         <!-- **** END OF MODIFIED SECTION **** -->
+        </section>
 
-      </main>
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="container" data-aos="zoom-in-up">
+                <h2>Contact Me</h2>
+                <p>Feel free to reach out directly:</p>
+                <p>
+                    <strong>Phone:</strong> <a href="tel:+1-571-762-1680">+1-571-762-1680</a>
+                </p>
+                <p>
+                    <strong>Email:</strong> <a href="mailto:mushfiqrhmn1@gmail.com">mushfiqrhmn1@gmail.com</a>
+                </p>
+            </div>
+        </section>
+    </main>
 
-      <!-- Footer -->
-      <footer>
-         <div class="container">
+    <!-- Footer -->
+    <footer>
+        <div class="container">
             <p>© 2024 Shawn R. All Rights Reserved.</p>
-         </div>
-      </footer>
+        </div>
+    </footer>
 
-      <button class="back-to-top" aria-label="Back to top">↑</button>
-      <script src="script.js"></script>
-   </body>
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Back to top">↑</button>
+
+    <!-- AOS (Animate On Scroll) Library JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Your Custom Script -->
+    <script src="script.js"></script>
+</body>
 </html>

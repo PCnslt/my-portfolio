@@ -1,56 +1,57 @@
-
-// Smooth scrolling for navigation links
 document.querySelectorAll('nav a').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
-    e.preventDefault();
-    const section = document.querySelector(this.getAttribute('href'));
-    section.scrollIntoView({ behavior: 'smooth' });
+  anchor.addEventListener('click', function (e) {
+      // Check if the link is internal (#...)
+      if (this.getAttribute('href').startsWith('#')) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href');
+          const targetSection = document.querySelector(targetId);
+          if (targetSection) {
+               // Calculate position accounting for fixed header height
+              const headerOffset = document.querySelector('header').offsetHeight;
+              const elementPosition = targetSection.getBoundingClientRect().top;
+              const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+              window.scrollTo({
+                  top: offsetPosition,
+                  behavior: 'smooth'
+              });
+
+              // Optionally close mobile menu if you add one later
+          }
+      }
+      // Allow default behavior for external links
   });
 });
 
-// Form submission handling
-const form = document.querySelector('form');
-form.addEventListener('submit', function(e) {
-  e.preventDefault();
-  const formData = new FormData(form);
-  const data = {
-    name: formData.get('name'),
-    email: formData.get('email'),
-    message: formData.get('message'),
-    to: 'mushfiqrhmn1@gmail.com'
-  };
 
-  // You would need to set up a server endpoint to handle this
-  fetch('/submit-form', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(data)
-  })
-  .then(response => response.json())
-  .then(data => {
-    alert('Message sent successfully!');
-    form.reset();
-  })
-  .catch(error => {
-    alert('Error sending message. Please try again.');
-  });
-});
+// --- Form submission handling (REMOVED) ---
+// The code related to 'form.addEventListener('submit', ...)' has been removed
+// as the form element no longer exists in the HTML.
 
-// Scroll-based navigation highlighting
+
+// Scroll-based navigation highlighting (Simple version)
+// Note: This simple version highlights based on section visibility.
+// A more robust solution might use Intersection Observer API.
 window.addEventListener('scroll', () => {
-  const sections = document.querySelectorAll('section');
+  const sections = document.querySelectorAll('main section[id]'); // Select only sections in main with an ID
   const navLinks = document.querySelectorAll('nav a');
-  
+  const headerHeight = document.querySelector('header').offsetHeight;
+  let currentSectionId = '';
+
   sections.forEach(section => {
-    const sectionTop = section.offsetTop - 100;
-    const sectionHeight = section.clientHeight;
-    if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
-      navLinks.forEach(link => {
-        link.style.color = link.getAttribute('href').slice(1) === section.id ? '#3498db' : 'white';
-      });
-    }
+      const sectionTop = section.offsetTop - headerHeight - 50; // Adjusted threshold
+      const sectionHeight = section.clientHeight;
+      if (window.pageYOffset >= sectionTop && window.pageYOffset < sectionTop + sectionHeight) {
+          currentSectionId = section.getAttribute('id');
+      }
+  });
+
+  navLinks.forEach(link => {
+      link.classList.remove('active'); // Use class for styling active link
+      // Check if the link's href matches the current section ID
+      if (link.getAttribute('href') === '#' + currentSectionId) {
+          link.classList.add('active');
+      }
   });
 });
 
@@ -58,19 +59,33 @@ window.addEventListener('scroll', () => {
 const backToTopButton = document.querySelector('.back-to-top');
 
 const toggleBackToTop = () => {
+  // Show button if scrolled down more than ~300px
   if (window.pageYOffset > 300) {
-    backToTopButton.classList.add('visible');
+      backToTopButton.classList.add('visible');
   } else {
-    backToTopButton.classList.remove('visible');
+      backToTopButton.classList.remove('visible');
   }
 };
 
+// Listen for scroll events
 window.addEventListener('scroll', toggleBackToTop);
 
+// Smooth scroll to top when button is clicked
 backToTopButton.addEventListener('click', (e) => {
-  e.preventDefault();
+  e.preventDefault(); // Prevent default button behavior
   window.scrollTo({
-    top: 0,
-    behavior: 'smooth'
+      top: 0,
+      behavior: 'smooth'
   });
+});
+
+
+// Initialize AOS (Animate On Scroll)
+AOS.init({
+  duration: 800,       // Animation duration in ms
+  offset: 100,         // Offset (in px) from the original trigger point
+  easing: 'ease-in-out', // Default easing for AOS animations
+  once: true,          // Whether animation should happen only once - while scrolling down
+  mirror: false,       // Whether elements should animate out while scrolling past them
+  anchorPlacement: 'top-bottom', // Defines which position of the element regarding to window should trigger the animation
 });

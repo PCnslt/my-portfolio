@@ -25,17 +25,22 @@ body {
   line-height: 1.7;
   background-color: var(--secondary-color);
   color: var(--text-color);
-  overflow-x: hidden; /* Prevent horizontal scrollbars from animations */
+  overflow-x: hidden;
+  padding-top: 100px; 
 }
 
 /* Header Styles */
 header {
-  background: var(--primary-color);
+  background: rgba(26, 26, 46, 0.5); /* Transparent background */
   color: var(--text-color);
-  position: fixed;
-  width: 100%;
-  z-index: 1000;
+  position: fixed;   /* Fixed positioning */
+  width: 100%;      /* Full width */
+  top: 0;           /* *** ADD THIS LINE: Pin to the top edge *** */
+  left: 0;          /* *** ADD THIS LINE (Good practice): Pin to left edge *** */
+  z-index: 1000;    /* Ensure it's above other content */
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px); /* Optional blur effect */
+  -webkit-backdrop-filter: blur(10px); /* Safari support for blur */
 }
 
 .banner {

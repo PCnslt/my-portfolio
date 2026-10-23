@@ -263,6 +263,14 @@ section h2::after {
     color: var(--text-color);
 }
 
+.portfolio-item .card-desc {
+    font-style: italic;
+    font-weight: 300;
+    font-size: 0.85rem;
+    margin-bottom: 0.8rem;
+    color: var(--muted-text-color);
+}
+
 .portfolio-item a {
     color: var(--accent-color);
     text-decoration: none;
